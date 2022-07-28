@@ -22,12 +22,12 @@ const Frutas = () => {
         <div>
             <hr />
             {
-                frut.map((fr, id) => (
+                tipos.map((fr, id) => (
                     <h3 key={fr.id}>{fr.id} {fr.nombre} {fr.color}</h3>
 
                 ))
             }
-            <button onClick={() => AgregarNuevo()}></button>
+            <button onClick={() => AgregarNuevo()}>enviar</button>
 
 
 
