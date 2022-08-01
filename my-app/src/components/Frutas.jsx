@@ -27,7 +27,7 @@ const Frutas = () => {
 
                 ))
             }
-            <button onClick={() => AgregarNuevo()}>enviar</button>
+            <button className='btn btn-outline-warning' onClick={() => AgregarNuevo()}>enviar</button>
 
 
 
