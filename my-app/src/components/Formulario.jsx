@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 const Formulario = () => {
     const [fruta, setFruta] = useState('')
     const [Descripcion, setDescripcion] = useState('')
+    const [lista, setLista] = useState([])
+
 
     const guardarDatos = (e) => {
         e.preventDefault();
@@ -16,7 +18,13 @@ const Formulario = () => {
             console.log('campo Descripcion vacio')
             return
         }
-        console.log(`procesando los Datos...${fruta} ${Descripcion}`)
+        console.log(`procesando los Datos... ${fruta} ${Descripcion}`)
+
+        setLista([
+            ...lista,
+            { NombreFru: fruta, NombDescrip: Descripcion }
+        ])
+
         //me ayuda a que los campo vuelva a esta en blanco para un nuevo ingreso 
         e.target.reset();
         setDescripcion('');
@@ -45,6 +53,14 @@ const Formulario = () => {
 
 
             </form>
+            <ul className='container mt-5'>
+                {
+                    lista.map((i, id) => (
+                        <li><h1 key={id}>{i.NombreFru} - {i.NombDescrip}</h1></li>
+                    ))
+                }
+            </ul>
+
 
         </div>
     )
